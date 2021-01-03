@@ -1,8 +1,10 @@
 package br.com.zup.initial.domain.entity;
 
 import br.com.zup.initial.domain.Audit;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.time.LocalDate;
 
 @Entity
@@ -17,9 +19,11 @@ public class Account extends Audit {
     @Column(name = "NOME")
     private String nome;
 
+    @Email
     @Column(name = "EMAIL", unique = true)
     private String email;
 
+    @CPF
     @Column(name = "CPF", unique = true)
     private String cpf;
 

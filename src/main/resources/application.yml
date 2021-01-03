@@ -1,6 +1,15 @@
 springdoc:
   swagger-ui:
     path: /
+    urls-primary-name: teste
+
+
+enviroments:
+  project-version: @project.version@
+  project-name: @project.name@
+  project-description: @project.description@
+  any-name: any value here
+  any-name-enviroment: ${JAVA-HOME}
 
 spring:
   datasource:

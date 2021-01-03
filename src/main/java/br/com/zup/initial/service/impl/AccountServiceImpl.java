@@ -58,9 +58,7 @@ public class AccountServiceImpl implements IAccountService {
                         this.update(acc);
                     }
             );
-
         }
-
     }
 
 
