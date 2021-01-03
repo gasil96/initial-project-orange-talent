@@ -1,11 +1,13 @@
 package br.com.zup.initial.domain;
 
+import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
 
+@MappedSuperclass
 public abstract class Audit {
 
     private LocalDate createdDate;

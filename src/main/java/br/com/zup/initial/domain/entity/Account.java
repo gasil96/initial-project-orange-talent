@@ -26,6 +26,9 @@ public class Account extends Audit {
     @Column(name = "DATA_NASCIMENTO")
     private LocalDate dataNascimento;
 
+    @Column(name = "PREMIUM_ACCOUNT")
+    private Boolean premiumAccount;
+
     public Long getId() {
         return id;
     }
@@ -66,6 +69,14 @@ public class Account extends Audit {
         this.dataNascimento = dataNascimento;
     }
 
+    public Boolean getPremiumAccount() {
+        return premiumAccount;
+    }
+
+    public void setPremiumAccount(Boolean premiumAccount) {
+        this.premiumAccount = premiumAccount;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
@@ -74,6 +85,7 @@ public class Account extends Audit {
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", dataNascimento=" + dataNascimento +
+                ", premiumAccount=" + premiumAccount +
                 '}';
     }
 }

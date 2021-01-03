@@ -5,6 +5,6 @@ import br.com.zup.initial.service.ICrudDefault;
 
 public interface IAccountService extends ICrudDefault<Account> {
 
-    void closeAccount();
+    void upgradeAccount(Integer age);
 
 }
