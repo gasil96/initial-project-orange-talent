@@ -1,10 +1,10 @@
 package br.com.zup.initial.domain.entity;
 
 import br.com.zup.initial.domain.Audit;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -17,16 +17,19 @@ public class Account extends Audit {
     private Long id;
 
     @Column(name = "NOME")
+    @NotNull(message = "Nome não pode ser nulo")
     private String nome;
 
-    @Email
+    @Email(message = "Email inválido")
+    @NotNull(message = "E-mail não pode ser nulo")
     @Column(name = "EMAIL", unique = true)
     private String email;
 
-    @CPF
+    @NotNull(message = "CPF não pode ser nulo")
     @Column(name = "CPF", unique = true)
     private String cpf;
 
+    @NotNull(message = "Data Nascimento não pode ser nulo")
     @Column(name = "DATA_NASCIMENTO")
     private LocalDate dataNascimento;
 

@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Validated
 @RequestMapping("account")
 public class AccountController {
 
@@ -21,12 +20,12 @@ public class AccountController {
     private IAccountService iAccountService;
 
     @PostMapping("save")
-    public ResponseEntity<Account> save(@Valid @RequestBody Account account) {
+    public ResponseEntity<Account> save(@RequestBody @Valid Account account) {
         return new ResponseEntity<>(iAccountService.save(account), HttpStatus.CREATED);
     }
 
     @PutMapping("update")
-    public ResponseEntity<Account> update(@Valid @RequestBody Account account) {
+    public ResponseEntity<Account> update(@RequestBody Account account) {
         return new ResponseEntity<>(iAccountService.update(account), HttpStatus.OK);
     }
 
